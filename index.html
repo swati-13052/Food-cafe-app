@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" type="text/css" href="Category.css" />
+    <link rel="stylesheet" type="text/css" href="Cart.css" />
+    <link rel="stylesheet" type="text/css" href="Filter.css" />
+    <meta name="device" content="mobile" />
+    <title>Spliwise</title>
+</head>
+
+<body>
+    <h2>Food Cafe</h2>
+    <div>The most affordable fast-food delivery services in your area.</div>
+    <div id="myCart" class="cartCont">
+        <div id="buttonWrap">
+            <button id="cartButton" class="cartButton">View Cart</button>
+        </div>
+        <div id="cartLength" class="cartLength"></div>
+    </div>
+    <div id="filter" class="filter">
+    </div>
+    <div id="allCategories" class="allCategories">
+    </div>
+    <div id="showCart" class="hide">
+        <div id="showhideCross" class="cross-icon">x</div>
+        <div>
+            <div style="margin-top: 10px;">Items in your Cart</div>
+        </div>
+        <div id="cartDetails"></div>
+    </div>
+    <script src="Category.js" defer></script>
+    <script src="Cart.js"></script>
+    <script src="Filter.js" defer></script>
+</body>
+
+</html>

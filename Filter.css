@@ -1,0 +1,14 @@
+.filter {
+    display: flex;
+    width: 70%;
+    margin: 20px auto;
+}
+
+.filter div {
+    width: 10%;
+}
+
+.filter div input{
+    cursor: pointer;
+    margin-right: 10px;
+}
