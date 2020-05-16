@@ -8,6 +8,7 @@ const CART = (
         let cartDetailContainer = document.getElementById("showCart");
         let showHideCartCross = document.getElementById("showhideCross");
         let cartInfoContainer = document.getElementById("cartDetails");
+        let showCartWrapper = document.getElementById("showCartWrapper");
 
         cartButtonWrap.addEventListener("click", showCart);
         showHideCartCross.addEventListener("click", hideCart);
@@ -16,12 +17,17 @@ const CART = (
             cartDetailContainer.classList.remove("showCart");
             cartDetailContainer.classList.add("hide");
             cartInfoContainer.innerHTML = "";
+            showCartWrapper.classList.remove("show");
+            showCartWrapper.classList.add("hide");
         }
 
         function showCart() {
             if(cart.length === 0) {
                 return;
             }
+
+            showCartWrapper.classList.remove("hide");
+            showCartWrapper.classList.add("show");
             cartDetailContainer.classList.add("showCart");
             cartDetailContainer.classList.remove("hide");
 
@@ -61,14 +67,15 @@ const CART = (
             if(cart.length === 0){
                 cartButton.classList.add("disabled");
                 cartButtonWrap.classList.add("no-cursor");
-                const carLength = document.getElementById("cartLength");
-                carLength.classList.add("hide");
+                const cartLength = document.getElementById("cartLength");
+                cartLength.classList.remove("show");
+                cartLength.classList.add("hide");
             } else {
                 cartButton.classList.remove("disabled");
                 cartButtonWrap.classList.remove("no-cursor");
-                const carLength = document.getElementById("cartLength");
-                carLength.classList.add("show");
-                carLength.textContent = cart.length;
+                const cartLength = document.getElementById("cartLength");
+                cartLength.classList.add("show");
+                cartLength.textContent = cart.length;
             }
         }
 

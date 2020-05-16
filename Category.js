@@ -10,9 +10,11 @@ const CATEGORY = function () {
 
     displayProducts = (filters) => {
         let categoriesToShow = [];
+        let cart = [];
+        allCategories.textContent = "";
         if(filters && filters.length){
             categoriesToShow = categories.filter(category => filters.includes(category.subhead));
-            allCategories.textContent = "";
+            cart = CART.getCart();
         }
         (categoriesToShow.length ? categoriesToShow : categories).forEach(category => {
             let categoryCont = document.createElement("div");
@@ -44,7 +46,7 @@ const CATEGORY = function () {
                 let button = document.createElement("button");
                 const buttonId = `Button${product.id}`
                 button.setAttribute("id", buttonId)
-                button.textContent = "Add";
+                button.textContent = cart.length && cart.findIndex(item => item.id === product.id) >=0 ? "Remove" : "Add";
                 button.addEventListener("click", () => CART.addRemoveToCart({ ...product, category: category.subhead }, buttonId));
                 priceContainer.appendChild(priceTag);
                 priceContainer.appendChild(button);
